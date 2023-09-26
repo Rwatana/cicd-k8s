@@ -1,12 +1,18 @@
+
+
 name: Slack
+
+on:
+  workflow_run:
+    workflows: ["Node.js CI"]
+    types:
+      - completed
+      - requested
 
 # on:
 #   push:
 #     branches: ["*"]
 
-on:
-  workflow_run:
-    workflows: [Node.js CI]
 jobs:
   slack:
     if: github.event.workflow_run.conclusion == 'failure'
