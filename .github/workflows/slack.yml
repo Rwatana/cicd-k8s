@@ -18,8 +18,7 @@ name: Slack
 
 on:
   push:
-    branches:
-      - main
+    branches: ["*"]
 
 jobs:
   slack:
