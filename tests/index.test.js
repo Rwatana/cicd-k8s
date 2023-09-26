@@ -1,4 +1,4 @@
-const fizzbuzz =  require("../index");
+const fizzbuzz =  require("../src/index");
 
 describe("fizzbuzz", () => {
     it("returns FIzzBuzz when value is divisible by 15", () => {
