@@ -1,9 +1,26 @@
+# name: Slack
+
+# on:
+#   workflow_run:
+#     workflows: ["*"]
+
+# jobs:
+#   slack:
+#     if: github.event.workflow_run.conclusion == 'failure'
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: rwatana/action-slack-workflow_run@v1.0.0
+#         with:
+#           slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+
 name: Slack
 
 on:
-  workflow_run:
-    workflows: ["*"]
-    
+  push:
+    branches:
+      - main
+
 jobs:
   slack:
     if: github.event.workflow_run.conclusion == 'failure'
